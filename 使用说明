@@ -1,0 +1,62 @@
+
+
+1.本库从support包迁移到了androidx，所以项目的gradle.properties文件要配置
+    android.enableJetifier=true  //表示当前项目启用 androidx
+    android.useAndroidX=true     //表示将依赖包也迁移到androidx  如果取值为false,表示不迁移依赖包到androidx，但在使用依赖包中的内容时可能会出现问题
+
+2.黄油刀(butterknife)配置说明：
+    1)本库已api黄油刀，所以需在项目的build.gradle进行如下配置
+        buildscript {
+          repositories {
+            mavenCentral()
+            google()
+           }
+          dependencies {
+            classpath 'com.jakewharton:butterknife-gradle-plugin:10.1.0'
+          }
+        }
+    2)依赖本库的Module要使用黄油刀时，只需在Module的build.gradle --> dependencies 内添加
+        annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+3.本库依赖了第三方的图片选择库
+    1)需在项目的build.gradle --> allprojects --> repositories 内添加
+        maven { url 'https://jitpack.io' }
+    2)如出现RxJava冲突，在app build.gradle --> android 下添加
+        //解决rxJava冲突（图片选择器）
+        packagingOptions {
+            exclude 'META-INF/rxjava.properties'
+        }
+    3)PictureSelectorUtil类中封装了几种使用方法
+    4)用不上该功能可移除该库
+
+4.网络请求示例
+    1)初始化Http.initHttp(AppApplication context);
+
+    2)Api接口类
+    @FormUrlEncoded
+    @POST("api/auths/login.json")
+    Observable<JsonResult<LoginDto>> login(@Field("mobile") String mobile,
+                                           @Field("password") String password);
+    3)具体使用方法
+    /**
+     * 登录
+     */
+    private void login(final String mobile, String password) {
+        showLoadingDialog();
+        Api.AUTH_API.login(mobile, password)
+                .compose(this.<JsonResult<LoginDto>>applySchedulers())
+                .subscribe(new RequestCallBack<LoginDto>() {
+                    @Override
+                    public void success(LoginDto response) {
+                        dismissLoadingDialog();
+                        //TODO
+
+                    }
+
+                    @Override
+                    public void fail(int errCode, String errStr) {
+                        dismissLoadingDialog();
+                        showToast(errStr);
+                    }
+                });
+    }
