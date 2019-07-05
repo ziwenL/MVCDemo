@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/px580dp"
+    android:layout_height="wrap_content"
+    android:background="@drawable/shape_hint_dialog"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/px68dp">
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/px30dp"
+        android:layout_marginEnd="@dimen/px30dp"
+        android:layout_marginBottom="@dimen/px48dp"
+        android:includeFontPadding="false"
+        android:textColor="#242424"
+        android:textStyle="bold"
+        android:visibility="gone"
+        tools:text="标题" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginStart="@dimen/px68dp"
+        android:layout_marginEnd="@dimen/px68dp"
+        android:layout_marginBottom="@dimen/px68dp"
+        android:gravity="center"
+        android:textColor="#242424"
+        android:textSize="14sp"
+        tools:text="您的账号在其他设备登录，请及时修改您的登录密码" />
+
+    <View style="@style/line_ee" />
+
+    <LinearLayout
+        android:id="@+id/ll_btn_root"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px99dp"
+        android:orientation="horizontal">
+
+        <com.ziwenl.library.widget.BGButton
+            android:id="@+id/btn_left"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/px1dp"
+            android:layout_weight="1"
+            android:text="取消"
+            android:textColor="#666666"
+            android:textSize="15sp"
+            app:backgroundColor="@color/transparent"
+            app:bottomLeftRadius="@dimen/px22dp" />
+
+        <View
+            android:id="@+id/view_midline"
+            android:layout_width="@dimen/px1dp"
+            android:layout_height="@dimen/px60dp"
+            android:layout_gravity="center_vertical"
+            android:background="@color/line_ee" />
+
+        <com.ziwenl.library.widget.BGButton
+            android:id="@+id/btn_right"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/px1dp"
+            android:layout_weight="1"
+            android:text="确认"
+            android:textColor="@color/colorAccent"
+            android:textSize="15sp"
+            app:backgroundColor="@color/transparent"
+            app:bottomRightRadius="@dimen/px22dp" />
+    </LinearLayout>
+
+    <com.ziwenl.library.widget.BGButton
+        android:id="@+id/btn_confirm"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px99dp"
+        android:text="确认"
+        android:textColor="@color/colorAccent"
+        android:textSize="15sp"
+        android:visibility="gone"
+        app:backgroundColor="@color/transparent"
+        app:bottomLeftRadius="@dimen/px22dp"
+        app:bottomRightRadius="@dimen/px22dp" />
+
+</LinearLayout>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="RefreshLayout">
+        <attr name="direction">
+            <enum name="top" value="0" />
+            <enum name="bottom" value="1" />
+            <enum name="both" value="2" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="BGButton">
+        <attr name="bottomLeftRadius" format="dimension" />
+        <attr name="bottomRightRadius" format="dimension" />
+        <attr name="topLeftRadius" format="dimension" />
+        <attr name="topRightRadius" format="dimension" />
+        <attr name="radius" format="dimension" />
+        <attr name="backgroundColor" format="color" />
+        <attr name="strokeColor" format="color" />
+        <attr name="strokeWidth" format="dimension" />
+        <attr name="pressedStrokeColor" format="color" />
+        <attr name="unClickStrokeColor" format="color" />
+        <attr name="pressedColor" format="color" />
+        <attr name="unClickColor" format="color" />
+        <!--渐变色-->
+        <attr name="backgroundColorStart" format="color" />
+        <attr name="backgroundColorEnd" format="color" />
+        <!--图片背景-->
+        <attr name="backgroundDrawable" format="reference" />
+    </declare-styleable>
+</resources>

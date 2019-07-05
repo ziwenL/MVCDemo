@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--默认状态栏颜色-->
+    <color name="colorPrimaryDark">#0ABFFF</color>
+    <!--默认标题栏颜色-->
+    <color name="colorPrimary">#0ABFFF</color>
+    <!--默认颜色（光标、RadioButton、switch）-->
+    <color name="colorAccent">#0ABFFF</color>
+    <color name="color_0ab3ff">#0AB3FF</color>
+    <color name="color_0bc7ff">#0BC7FF</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <!--点击时颜色-->
+    <color name="state_pressed_color">#dfe0e1</color>
+
+    <color name="color_33">#333333</color>
+
+    <color name="line_ee">#eeeeee</color>
+</resources>

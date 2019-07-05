@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginEnd="@dimen/px55dp"
+    android:layout_marginStart="@dimen/px55dp"
+    android:alpha="0.5"
+    android:animateLayoutChanges="true"
+    android:background="@drawable/shape_bg_toast"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/iv_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/px30dp"
+        android:layout_marginEnd="@dimen/px40dp"
+        android:layout_marginStart="@dimen/px40dp"
+        android:src="@drawable/popup_bg_succeed"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px30dp"
+        android:layout_marginEnd="@dimen/px40dp"
+        android:layout_marginStart="@dimen/px40dp"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingTop="@dimen/px30dp"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        tools:text="已提醒" />
+</LinearLayout>

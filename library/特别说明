@@ -1,0 +1,35 @@
+
+    1.当gradle为3.3.0以上时出现
+        WARNING: API 'variantOutput.getProcessResources()' is obsolete and has been replaced with 'variantOutput.getProcessResourcesProvider()'.
+        It will be removed at the end of 2019.
+      警告是因为butterknife内部引用了已过时的方法，只能等butterknife新版本修复
+      （将项目的gradle降级至3.2.1及以下可以暂时回避该警告，但没这个必要）
+                                                                        ————ziwen 2019/03/11
+
+    2.方法数超过65536时解决办法
+        1)app的build.gradle中添加
+        ...
+        android {
+            ...
+             defaultConfig {
+                    ...
+                    //解决方法数超过65536问题
+                    multiDexEnabled true
+                    ...
+                }
+        }
+        ...
+        dependencies {
+            ...
+            //解决方法数超过65536问题
+            implementation 'com.android.support:multidex:1.0.3'
+        }
+
+       2)Application中重写attachBaseContext方法执行 MultiDex.install
+           @Override
+           protected void attachBaseContext(Context base) {
+               super.attachBaseContext(base);
+               //解决方法数超过65536问题
+               MultiDex.install(this);
+           }
+                                                                        ————ziwen 2019/04/28

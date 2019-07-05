@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/viewNetworkErrorLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_centerInParent="true"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="@dimen/px200dp"
+        android:layout_height="@dimen/px200dp"
+        android:src="@drawable/network_error_icon" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/px40dp"
+        android:layout_marginBottom="@dimen/px20dp"
+        android:text="网络出错了,请检查网络后重试"
+        android:textSize="@dimen/px26dp" />
+
+    <com.ziwenl.library.widget.BGButton
+        android:id="@+id/btn_reload"
+        android:layout_width="@dimen/px300dp"
+        android:layout_height="@dimen/px68dp"
+        android:layout_marginTop="@dimen/px40dp"
+        android:layout_marginBottom="@dimen/px40dp"
+        android:gravity="center"
+        android:text="重新加载"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px26dp"
+        app:backgroundColor="@color/colorAccent" />
+
+</LinearLayout>
